@@ -1,0 +1,14 @@
+{
+  "name": "lab2-git-javascript",
+  "version": "0.1.0",
+  "description": "Basic JavaScript utilities with Git",
+    "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "Roy Haynes",
+  "license": "MIT"
+}
