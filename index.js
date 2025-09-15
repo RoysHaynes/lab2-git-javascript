@@ -31,3 +31,4 @@ const duplicateArray =[1,2,2,3,3,4];
 console.log('Test array:',testArray);
 console.log('sum=',arrays.sum(testArray));
 console.log('average=',arrays.average(testArray));
+console.log('filterEven=',arrays.filterEven(testArray));
