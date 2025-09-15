@@ -38,3 +38,10 @@ export function filterEven(arr){
     }
     return arr.filter(num=> num % 2 === 0);
 }
+
+export function filterOdd(arr){
+    if (!Array.isArray(arr)){
+        throw new Error('Input must be an Array');
+    }
+    return arr.filter(num=> num % 2 !== 0);
+}

@@ -32,3 +32,4 @@ console.log('Test array:',testArray);
 console.log('sum=',arrays.sum(testArray));
 console.log('average=',arrays.average(testArray));
 console.log('filterEven=',arrays.filterEven(testArray));
+console.log('filterOdd=',arrays.filterOdd(testArray));
