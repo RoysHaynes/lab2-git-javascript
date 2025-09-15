@@ -6,7 +6,8 @@
 
 /**
  * Sum all elements in array
- * @
+ * @param {number[]} arr - Array of numbers
+ * @returns {number} Sum of all elements
  */
 export function sum(arr){
     if (!Array.isArray(arr)){
@@ -39,9 +40,26 @@ export function filterEven(arr){
     return arr.filter(num=> num % 2 === 0);
 }
 
+/**
+ * Filter odd numbers
+ * @param {number[]} arr - Array of numbers
+ * @returns {number[]} Array of odd numbers
+ */
 export function filterOdd(arr){
     if (!Array.isArray(arr)){
         throw new Error('Input must be an Array');
     }
     return arr.filter(num=> num % 2 !== 0);
+}
+
+/**
+ * Remove duplicate values
+ * @param {Array} arr - Array with possible duplicates
+ * @returns {Array} Array with unique values
+ */
+export function removeDuplicates(arr){
+    if (!Array.isArray(arr)){
+        throw new Error('Input must be an Array');
+    }
+    return [...new Set(arr)];
 }
