@@ -1,10 +1,8 @@
-[!Warning] The Markdown listing with code fence close syntax like
-``` 
-within a markdown file is a problem. Many Markdown parsers have workarounds like an extra 
+[!WARNING] The Markdown listing with code fence close syntax like ``` within a 
+markdown file is a problem. Many Markdown parsers have workarounds like an extra 
 backtick, but many don't. In this case I added a space that you'd need to remove!
 Remember, sweat the details, and now there are sharp points and little gotchas all
 over the place.
-```
 
 # Lab 2: Git and JavaScript Basics
 ## Description
@@ -27,3 +25,8 @@ Roy Haynes
 
 ## License
 MIT
+
+## Features
+- **Math utilities**: Basic arithmetic, factorial, power operations
+- **String utilities**: Reverse, capitalize, palindrome checking
+- **Array utilities**: Sum, average, filtering duplicate removal
