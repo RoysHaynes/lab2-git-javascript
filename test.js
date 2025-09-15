@@ -18,6 +18,9 @@ describe('Math Module',() =>{
         it('should throw errors when dividing by zero',() => {
             assert.throws(()=> math.divide(10,0), /Cannot divide by zero/);
         });
+        it('should calculate factorial correctly',() =>{
+            assert.equal(math.factorial(5),120);
+        });
     });
 
     describe('Advanced operations',() => {
@@ -26,6 +29,9 @@ describe('Math Module',() =>{
         });
         it('should throw error for negative square root',() => {
             assert.throws(()=> math.sqrt(-4), /Cannot calculate square root of negative number/);
+        });
+        it('should throw error when adding strings', () =>{
+            assert.throws(()=> math.add("two","five"),/Add numbers only/);
         });
     });
 });
@@ -37,6 +43,10 @@ describe('String module',() =>{
         });
         it('should throw error for non-string input to reverse',() =>{
             assert.throws(()=> strings.reverse(123), /Input must be a string/);
+        });
+        it('should correctly identify palindromes',() =>{
+            assert.equal(strings.isPalindrome('racecar'),true);
+            assert.equal(strings.isPalindrome('casino'),false);
         });
     });
 });
@@ -50,5 +60,10 @@ describe('Array module',() =>{
         it('should throw error for empty array average',()=>{
             assert.throws(() => arrays.average([]), /Input must be a non-empty Array/);
         });
+        it('should calculate the average of array elements correctly',() =>{
+            assert.equal(arrays.average([2,4,6]),4);
+            assert.equal(arrays.average([1,2,3,4,5]),3);
+        })
+
     });
 });

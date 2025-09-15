@@ -12,7 +12,10 @@
  * @returns {number} Sum of a and b
  */
  export function add (a,b){
-    return a+b;
+     if((typeof a !=="number")||(typeof b!=="number")){
+         throw new Error("Add numbers only")
+     }
+     return a+b;
 }
 
 /**
