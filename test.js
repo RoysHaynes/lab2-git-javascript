@@ -1,36 +1,54 @@
 /**
- * Start of test system
+ * Native Node.js testing suite for Lab 2
  * @file 'test.js'
  * @author '<Roy Haynes>'
  */
-// Import math functions
+
+import {describe, it} from 'node:test';
+import assert from 'node:assert/strict';
 import * as math from './math.js';
 import * as strings from './strings.js';
 import * as arrays from './arrays.js';
 
-console.log("====Testing Math Function===");
-console.log('add(5,3)=',math.add(5,3)); //should be 8
-console.log('Subtract(10,4)=',math.subtract(10,4));//should be 6
-console.log('multiply(3,7)=',math.multiply(3,7)); //should be 21
-console.log('divide(20,4)=',math.divide(20,4)); //should be 5
-console.log('power(2,8)=',math.power(2,8));// should be 256
-console.log('sqrt(16)=',math.sqrt(16));// should be 4
-console.log('factorial(5)=',math.factorial(5));// should be 120
+describe('Math Module',() =>{
+    describe('Basic arithmetic',() => {
+        it('should add two numbers correctly',() =>{
+            assert.equal(math.add(5,3),8);
+        });
+        it('should throw errors when dividing by zero',() => {
+            assert.throws(()=> math.divide(10,0), /Cannot divide by zero/);
+        });
+    });
 
-console.log('\n=== Testing String module===');
-console.log('reverse("hello")=', strings.reverse("hello"));
-console.log('capitalize("javascript")=', strings.capitalize("javascript"));
-console.log('countVowels("hello world")=', strings.countVowels("hello world"));
-console.log('isPalindrome("racecar")=', strings.isPalindrome("racecar"));
-console.log('isPalindrome("hello")=', strings.isPalindrome("hello"));
+    describe('Advanced operations',() => {
+        it('should calculate power correctly',() =>{
+            assert.equal(math.power(2,8),256);
+        });
+        it('should throw error for negative square root',() => {
+            assert.throws(()=> math.sqrt(-4), /Cannot calculate square root of negative number/);
+        });
+    });
+});
 
-console.log('\n=== Testing Array Module===');
-const testArray =[1,2,3,4,5,6];
-const duplicateArray =[1,2,2,3,3,4];
-console.log('Test array:',testArray);
-console.log('sum=',arrays.sum(testArray));
-console.log('average=',arrays.average(testArray));
-console.log('filterEven=',arrays.filterEven(testArray));
-console.log('filterOdd=',arrays.filterOdd(testArray));
-console.log('\nArray with duplicates:',duplicateArray);
-console.log('removeDuplicates=',arrays.removeDuplicates(duplicateArray));
+describe('String module',() =>{
+    describe('string manipulation',() =>{
+        it('should reverse strings correctly',() =>{
+            assert.equal(strings.reverse('hello'),'olleh');
+        });
+        it('should throw error for non-string input to reverse',() =>{
+            assert.throws(()=> strings.reverse(123), /Input must be a string/);
+        });
+    });
+});
+
+describe('Array module',() =>{
+    describe('Array Calculations',() =>{
+        it('should sum array elements correctly',() =>{
+            assert.equal(arrays.sum([1,2,3,4,5]),15);
+            assert.equal(arrays.sum([]),0);
+        });
+        it('should throw error for empty array average',()=>{
+            assert.throws(() => arrays.average([]), /Input must be a non-empty Array/);
+        });
+    });
+});
