@@ -1,36 +1,84 @@
-// Math Utility functions
+/**
+ * Math utilities for learning purposes
+ * @file 'math.js'
+ * @author '<Roy Haynes>'
+ */
 
-function add (a,b){
+
+/**
+ * Add two numbers
+ * @param {number} a - First number
+ * @param {number} b - Second number
+ * @returns {number} Sum of a and b
+ */
+ export function add (a,b){
     return a+b;
 }
 
-function subtract (a,b){
+/**
+ * Subtract two numbers
+ * @param {number} a - First number
+ * @param {number} b - Second number
+ * @returns {number} Difference of a and b
+ */
+export function subtract (a,b){
     return a-b;
 }
 
-function multiply (a,b){
+/**
+ * Multiply two numbers
+ * @param {number} a - First number
+ * @param {number} b - Second number
+ * @returns {number} Product of a and b
+ */
+export function multiply (a,b){
     return a*b;
 }
 
-function divide (a,b){
+/**
+ * Divide two numbers
+ * @param {number} a - Dividend
+ * @param {number} b - Divisor
+ * @returns {number} Quotient
+ * @throws {Error} If b is zero
+ */
+export function divide (a,b){
     if(b===0){
         throw new Error("Cannot divide by zero")
     }
     return a/b;
 }
 
-function power(base, exponent){
+/**
+ * Calculate power
+ * @param {number} base - Base number
+ * @param {number} exponent - Exponent
+ * @returns {number} Base raised to exponent
+ */
+export function power(base, exponent){
     return Math.pow(base, exponent);
 }
 
-function sqrt(n){
+/**
+ * Calculate square root
+ * @param {number} n - Number to find square root of
+ * @returns {number} Square root
+ * @throws {Error} If n is negative
+ */
+export function sqrt(n){
     if(n < 0) {
         throw new Error("Cannot calculate square root of negative number");
     }
     return Math.sqrt(n);
 }
 
-function factorial(n){
+/**
+ * Calculate factorial
+ * @param {number} n - Number to calculate factorial of
+ * @returns {number}  Factorial of n
+ * @throws {Error} If n is negative
+ */
+export function factorial(n){
     if (n < 0){
         throw new Error("Factorial not defined for negative numbers");
     }
@@ -42,14 +90,3 @@ function factorial(n){
     return result;
 }
 
-// Test the functions with console.log
-console.log("Testing Math Functions");
-console.log('add(5,3)=',add(5,3)); //should be 8
-console.log('Subtract(10,4)=',subtract(10,4));//should be 6
-console.log('multiply(3,7)=',multiply(3,7)); //should be 21
-console.log('divide(20,4)=',divide(20,4)); //should be 5
-
-// Add tests for new functions
-console.log('power(2,8)=',power(2,8));// should be 256
-console.log('sqrt(16)=',sqrt(16));// should be 4
-console.log('factorial(5)=',factorial(5));// should be 120
